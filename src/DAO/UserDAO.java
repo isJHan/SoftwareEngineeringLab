@@ -3,11 +3,11 @@ package DAO;
 //User表接口
 import java.sql.*;
 import Model.User;
-import DB.UserDBUtil;
+import DB.DBUtil;
 public class UserDAO {
     //查询
     public static User select(String name) {
-        Connection con = new UserDBUtil().getConnection();
+        Connection con = new DBUtil().getConnection();
         String sql = "select * from User_ where Name = ?";
         User user = null;
         try {
@@ -21,7 +21,7 @@ public class UserDAO {
                         rs.getInt("Type")
                 );
         } catch (Exception e) {
-
+            System.out.println(e.toString());
         }
         return user;
 

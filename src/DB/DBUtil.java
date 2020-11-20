@@ -5,7 +5,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 //连接数据库的User_表
 //返回Connection
-public class UserDBUtil {
+public class DBUtil {
     private static final String URL = "jdbc:sqlserver://localhost:1433;DatabaseName=TestDB";
     private static final String NAME = "sa";
     private static final String PASSWORD = "jiahan123";
@@ -13,7 +13,7 @@ public class UserDBUtil {
     private Connection conn = null;
 
 
-    public UserDBUtil() {
+    public DBUtil() {
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             conn = DriverManager.getConnection(URL, NAME, PASSWORD);
@@ -28,7 +28,7 @@ public class UserDBUtil {
     }
 
     public static void main(String[] args){
-        Connection con = (new UserDBUtil()).getConnection();
+        Connection con = (new DBUtil()).getConnection();
         if(con == null) System.out.println("null");
     }
 }
