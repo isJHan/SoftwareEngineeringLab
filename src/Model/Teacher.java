@@ -11,6 +11,12 @@ public class Teacher {
         this.tname = tname;
     }
 
+    public Teacher(String tno, String tname, String college) {
+        this.tno = tno;
+        this.tname = tname;
+        this.college = college;
+    }
+
     public void setCollege(String college) {
         this.college = college;
     }

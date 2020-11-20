@@ -15,7 +15,7 @@ public class InfoControl implements InfoControlInterface{
         return new StudentDAO().insert(stu);
     }
     public int insertInfo(Teacher tea){
-
+        return new TeacherDAO().insert(tea);
     }
 
     //删
@@ -23,7 +23,7 @@ public class InfoControl implements InfoControlInterface{
         return new StudentDAO().delete(stu);
     }
     public int deleteInfo(Teacher tea){
-
+        return new TeacherDAO().delete( tea);
     }
 
     //改
@@ -31,7 +31,7 @@ public class InfoControl implements InfoControlInterface{
         return new StudentDAO().set(stu);
     }
     public int setInfo(Teacher tea){
-
+        return new TeacherDAO().set(tea);
     }
 
     //查，
@@ -44,6 +44,6 @@ public class InfoControl implements InfoControlInterface{
         return new StudentDAO().queryStudent(condition);
     }
     public List<Teacher> queryTeacher(String condition){
-
+        return new TeacherDAO().queryTeacher(condition);
     }
 }
